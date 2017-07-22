@@ -1,0 +1,7 @@
+version: '2'
+services:
+  master:
+    build: .
+    container_name: master
+    ports:
+      - "8080:8080"

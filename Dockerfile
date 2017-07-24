@@ -21,7 +21,7 @@ RUN apt-add-repository ppa:webupd8team/java -y \
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # Download Spark
-RUN wget http://apache.mirror.triple-it.nl/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz
+RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz
 # Extract Spark
 RUN tar -xzf spark-2.2.0-bin-hadoop2.7.tgz
 # Clean up
@@ -29,5 +29,10 @@ RUN rm spark-2.2.0-bin-hadoop2.7.tgz
 # Move Spark to otp directory
 RUN mv spark-2.2.0-bin-hadoop2.7 /opt/spark
 
+ENV SPARK_HOME /opt/spark
+
+EXPOSE 8080
+RUN chown -R root:root $SPARK_HOME
+
 # Start the interactive shell
-CMD ["/opt/spark/bin/spark-shell", "--master", "local[*]"]
+CMD ["bash"]

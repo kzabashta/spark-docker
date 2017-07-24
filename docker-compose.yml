@@ -5,4 +5,4 @@ services:
     container_name: master
     ports:
       - "8080:8080"
-    command: ["/opt/spark/sbin/start-master.sh"]
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master

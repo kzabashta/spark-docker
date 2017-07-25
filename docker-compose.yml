@@ -7,7 +7,7 @@ services:
       - "8080:8080"
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
   slave:
-    image: anchormen/spark
+    build: .
     depends_on:
       - master
     command: /opt/spark/sbin/start-slave.sh spark://master:7077

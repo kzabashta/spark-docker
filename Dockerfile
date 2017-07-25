@@ -30,6 +30,7 @@ RUN rm spark-2.2.0-bin-hadoop2.7.tgz
 RUN mv spark-2.2.0-bin-hadoop2.7 /opt/spark
 
 ENV SPARK_HOME /opt/spark
+ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.4-src.zip
 
 EXPOSE 8080
 RUN chown -R root:root $SPARK_HOME

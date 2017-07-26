@@ -22,13 +22,13 @@ RUN apt-add-repository ppa:webupd8team/java -y \
 # Define JAVA_HOME environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 # Download Spark
-RUN wget http://d3kbcqa49mib13.cloudfront.net/{SPARK_VERSION}.tgz
+RUN wget http://d3kbcqa49mib13.cloudfront.net/${SPARK_VERSION}.tgz
 # Extract Spark
-RUN tar -xzf {SPARK_VERSION}.tgz
+RUN tar -xzf ${SPARK_VERSION}.tgz
 # Clean up
-RUN rm {SPARK_VERSION}.tgz
+RUN rm ${SPARK_VERSION}.tgz
 # Move Spark to otp directory
-RUN mv {SPARK_VERSION} /opt/spark
+RUN mv ${SPARK_VERSION} /opt/spark
 
 EXPOSE 8080
 RUN chown -R root:root $SPARK_HOME

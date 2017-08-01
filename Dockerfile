@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM jupyter/scipy-notebook
 
 MAINTAINER kosta.zabashta@gmail.com
 

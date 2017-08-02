@@ -16,11 +16,12 @@ RUN apt-get update \
     && apt-get -y install software-properties-common \
     && apt-get -y install wget
 # Install Java
-RUN apt-add-repository ppa:webupd8team/java -y \
-&&  apt-get update -y \
-&&  echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
-&&  echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections \
-&&  apt-get install -y oracle-java8-installer
+RUN echo 'deb http://cdn-fastly.deb.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list && \
+    apt-get -y update && \
+    apt-get install --no-install-recommends -t jessie-backports -y openjdk-8-jre-headless ca-certificates-java && \
+    rm /etc/apt/sources.list.d/jessie-backports.list && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 # Define JAVA_HOME environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 # Download Spark

@@ -33,5 +33,11 @@ RUN rm ${SPARK_VERSION}.tgz
 # Move Spark to otp directory
 RUN mv ${SPARK_VERSION} /opt/spark
 
+# Web UI
 EXPOSE 8080
+# Spark
+EXPOSE 7077
+# REST
+EXPOSE 6066
+
 RUN chown -R root:root $SPARK_HOME

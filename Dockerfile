@@ -2,6 +2,8 @@ FROM jupyter/scipy-notebook
 
 MAINTAINER kosta.zabashta@gmail.com
 
+USER root
+
 LABEL version="spark2.2.0"
 ARG SPARK_VERSION=spark-2.2.0-bin-hadoop2.7
 

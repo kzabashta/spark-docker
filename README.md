@@ -11,6 +11,20 @@ This Docker image helps to run the Spark in a cluster mode with a master and var
 3. Verify that the cluster is running by going to http://<localhost>:8080. *Note: if you are running Docker on OS X or Windows, replace localhost with the docker host VM IP address. You can get the IP address by running* ```docker-machine ip```.
 4. Destroy the cluster ```docker-compose down```
 
+## Test
+
+```
+import pyspark
+conf = pyspark.SparkConf()
+
+conf.setMaster("spark://<docker machine ip>:7077")
+conf.setAppName('test')
+
+sc = pyspark.SparkContext(conf=conf)
+
+rdd = sc.parallelize(range(100))
+```
+
 ## TODO
 Need to add support for the following components:
 1. Scala

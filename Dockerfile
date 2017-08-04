@@ -22,8 +22,7 @@ RUN echo 'deb http://cdn-fastly.deb.debian.org/debian jessie-backports main' > /
     rm /etc/apt/sources.list.d/jessie-backports.list && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-# Define JAVA_HOME environment variable
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+
 # Download Spark
 RUN wget http://d3kbcqa49mib13.cloudfront.net/${SPARK_VERSION}.tgz
 # Extract Spark

@@ -2,12 +2,14 @@ version: '2'
 services:
   master:
     build: .
+    image: kz85/spark-docker
     container_name: master
     ports:
       - "8080:8080"
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
   slave:
     build: .
+    image: kz85/spark-docker
     depends_on:
       - master
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker master:7077

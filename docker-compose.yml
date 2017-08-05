@@ -9,7 +9,7 @@ services:
       - "7077:7077"
       - "6066:6066"
       - "8888:8888"
-    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master
+    command: bash -c "start-notebook.sh --NotebookApp.token='' & /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h master"
   slave:
     build: .
     image: kz85/spark-docker

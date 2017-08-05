@@ -28,10 +28,10 @@ rdd = sc.parallelize(range(100))
 
 ## TODO
 Need to add support for the following components:
-1. Scala
-2. PySpark
-3. HDFS
-4. Zeppelin
-5. Jupyter
-6. Instructions on setting up in Azure/AWS with Docker Swarm
-7. Run containers in some kind of process manager
+[ ] Scala
+[x] PySpark
+[ ] HDFS
+[ ] Zeppelin
+[x] Jupyter
+[ ] Instructions on setting up in Azure/AWS with Docker Swarm
+[ ] Run containers in some kind of process manager

@@ -33,3 +33,4 @@ Need to add support for the following components:
 4. Zeppelin
 5. Jupyter
 6. Instructions on setting up in Azure/AWS with Docker Swarm
+7. Run containers in some kind of process manager

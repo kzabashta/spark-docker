@@ -18,12 +18,13 @@ This Docker image helps to run the Spark in a cluster mode with a master and var
 import pyspark
 conf = pyspark.SparkConf()
 
-conf.setMaster("spark://<docker machine ip>:7077")
+conf.setMaster("spark://<docker machine IP>:7077")
 conf.setAppName('test')
 
 sc = pyspark.SparkContext(conf=conf)
 
 rdd = sc.parallelize(range(100))
+print(rdd.reduce(lambda x,y: x+y))
 ```
 
 ## TODO

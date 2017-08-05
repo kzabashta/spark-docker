@@ -7,7 +7,7 @@ This Docker image helps to run the Spark in a cluster mode with a master and var
 ## Installation
 0. Setup Docker and docker-compose first
 1. Build the image using included Dockerfile ```docker-compose build```
-2. Spin up a Spark cluster with 1 master and 2 slaves (as an example) ```docker-compose scale master=1 slave=2```
+2. Spin up a Spark cluster with 1 master and 2 slaves (as an example) ```docker-compose up --scale master=1 --scale slave=2```
 3. Verify that the cluster is running by going to http://<localhost>:8080. *Note: if you are running Docker on OS X or Windows, replace localhost with the docker host VM IP address. You can get the IP address by running* ```docker-machine ip```.
 4. Destroy the cluster ```docker-compose down```
 
